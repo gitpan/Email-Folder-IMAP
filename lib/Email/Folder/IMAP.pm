@@ -1,9 +1,9 @@
 package Email::Folder::IMAP;
-# $Id: IMAP.pm,v 1.1 2004/08/07 18:39:44 cwest Exp $
+# $Id: IMAP.pm,v 1.2 2004/08/18 00:34:53 cwest Exp $
 use strict;
 
 use vars qw[$VERSION $IMAP];
-$VERSION   = sprintf "%d.%02d", split m/\./, (qw$Revision: 1.1 $)[1];
+$VERSION   = sprintf "%d.%02d", split m/\./, (qw$Revision: 1.2 $)[1];
 $IMAP    ||= 'Net::IMAP::Simple';
 
 use base qw[Email::Folder::Reader];
@@ -58,6 +58,7 @@ Email::Folder::IMAP - Email::Folder Access to IMAP Folders
 =head1 SYNOPSIS
 
   use Email::Folder;
+  use Email::FolderType::Net;
   
   my $folder = Email::Folder->new('imap://example.com'); # read INBOX
   
