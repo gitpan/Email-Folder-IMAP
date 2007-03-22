@@ -1,15 +1,18 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         Email-Folder-IMAP
-version:      1.10
-version_from: lib/Email/Folder/IMAP.pm
-installdirs:  site
-requires:
+--- #YAML:1.0
+name:                Email-Folder-IMAP
+version:             1.101
+abstract:            Email::Folder Access to IMAP Folders
+license:             perl
+generated_by:        ExtUtils::MakeMaker version 6.32
+distribution_type:   module
+requires:     
     Email::Folder::Reader:         
     Email::FolderType::Net:        
     Net::IMAP::Simple:             0.95
     Test::More:                    0.47
     URI::imap:                     
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.30
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
+    version: 1.2
+author:
+    - Casey West <casey@geeknest.com>
