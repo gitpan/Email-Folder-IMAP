@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                Email-Folder-IMAP
-version:             1.101
+version:             1.102
 abstract:            Email::Folder Access to IMAP Folders
 license:             perl
 generated_by:        ExtUtils::MakeMaker version 6.32
