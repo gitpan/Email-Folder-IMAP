@@ -1,9 +1,10 @@
 use strict;
 use warnings;
 package Email::Folder::IMAP;
+{
+  $Email::Folder::IMAP::VERSION = '1.104';
+}
 # ABSTRACT: Email::Folder Access to IMAP Folders
-
-our $VERSION = '1.102';
 
 use parent qw[Email::Folder::Reader];
 use Net::IMAP::Simple 0.95; # :port support
@@ -56,13 +57,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Email::Folder::IMAP - Email::Folder Access to IMAP Folders
 
 =head1 VERSION
 
-version 1.103
+version 1.104
 
 =head1 SYNOPSIS
 
