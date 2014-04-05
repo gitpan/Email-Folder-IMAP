@@ -1,11 +1,8 @@
 use strict;
 use warnings;
 package Email::Folder::IMAP;
-{
-  $Email::Folder::IMAP::VERSION = '1.104';
-}
 # ABSTRACT: Email::Folder Access to IMAP Folders
-
+$Email::Folder::IMAP::VERSION = '1.105';
 use parent qw[Email::Folder::Reader];
 use Net::IMAP::Simple 0.95; # :port support
 use URI;
@@ -53,6 +50,54 @@ sub next_message {
 
 1;
 
+#pod =head1 SYNOPSIS
+#pod
+#pod   use Email::Folder;
+#pod   use Email::FolderType::Net;
+#pod   
+#pod   my $folder = Email::Folder->new('imap://example.com'); # read INBOX
+#pod   
+#pod   print $_->header('Subject') for $folder->messages;
+#pod
+#pod =head1 DESCRIPTION
+#pod
+#pod This software adds IMAP functionality to L<Email::Folder|Email::Folder>.
+#pod Its interface is identical to the other
+#pod L<Email::Folder::Reader|Email::Folder::Reader> subclasses.
+#pod
+#pod =head2 Parameters
+#pod
+#pod C<username> and C<password> parameters may be sent to C<new()>. If
+#pod used, they override any user info passed in the connection URI.
+#pod
+#pod =head2 Folder Specification
+#pod
+#pod Folders are specified using a simplified form of the IMAP URL Scheme
+#pod detailed in RFC 2192. Not all of that specification applies. Here
+#pod are a few examples.
+#pod
+#pod Selecting the INBOX.
+#pod
+#pod   imap://foo.com
+#pod
+#pod Selecting the INBOX using URI based authentication. Remember that the
+#pod C<username> and C<password> parameters passed to C<new()> will override
+#pod anything set in the URI.
+#pod
+#pod   imap://user:pass@foo.com
+#pod
+#pod Selecting the p5p list.
+#pod
+#pod   imap://foo.com/perl/perl5-porters
+#pod
+#pod =head1 SEE ALSO
+#pod
+#pod L<Email::Folder>,
+#pod L<Email::Folder::Reader>,
+#pod L<Email::FolderType::Net>,
+#pod L<URI::imap>,
+#pod L<Net::IMAP::Simple>.
+
 __END__
 
 =pod
@@ -65,7 +110,7 @@ Email::Folder::IMAP - Email::Folder Access to IMAP Folders
 
 =head1 VERSION
 
-version 1.104
+version 1.105
 
 =head1 SYNOPSIS
 
